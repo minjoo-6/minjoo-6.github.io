@@ -5,31 +5,34 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import SectionAbout from '../components/section-about';
-import SectionBlog from '../components/section-blog';
 import SectionExperience from '../components/section-experience';
 import SectionProjects from '../components/section-projects';
+import SectionAward from '../components/section-award';
 import SectionSkills from '../components/section-skills';
+import SectionCertification from '../components/section-certification'
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
   const about = get(data, 'site.siteMetadata.about', false);
   const projects = get(data, 'site.siteMetadata.projects', false);
-  const posts = data.allMarkdownRemark.edges;
+  const awards = get(data, 'site.siteMetadata.awards', false);
   const experience = get(data, 'site.siteMetadata.experience', false);
   const skills = get(data, 'site.siteMetadata.skills', false);
-  const noBlog = !posts || !posts.length;
+  const certification = get(data, 'site.siteMetadata.certifications', false)
 
   return (
     <Layout>
       <SEO />
-      <Header metadata={data.site.siteMetadata} noBlog={noBlog} />
+      <Header metadata={data.site.siteMetadata} />
       {about && <SectionAbout about={about} />}
-      {projects && projects.length && <SectionProjects projects={projects} />}
-      {!noBlog && <SectionBlog posts={posts} />}
-      {experience && experience.length && (
-        <SectionExperience experience={experience} />
-      )}
       {skills && skills.length && <SectionSkills skills={skills} />}
+      {experience && experience.length && (<SectionExperience experience={experience} />)}
+      {projects && projects.length && <SectionProjects projects={projects} />}
+      {awards && awards.length && (
+                <SectionAward awards={awards} />
+            )}
+
+      {certification && certification.length && <SectionCertification certifications={certification} />}
     </Layout>
   );
 };
@@ -44,12 +47,13 @@ export const pageQuery = graphql`
         title
         description
         about
-        author
         github
-        linkedin
         projects {
           name
           description
+          role
+          stack
+          year
           link
         }
         experience {
@@ -57,9 +61,20 @@ export const pageQuery = graphql`
           description
           link
         }
+        awards {
+          name
+          year
+          description
+        }
         skills {
           name
           description
+        }
+        certifications {
+            name
+            institution
+            year
+            description
         }
       }
     }

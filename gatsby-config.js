@@ -1,77 +1,79 @@
 module.exports = {
   siteMetadata: {
+    about: `안녕하세요, 김민주입니다.`,
+    awards: [
+      {
+        name: '우수상',
+        year: '2023',
+        description: 'SW중심대학 사업단 캡스톤 디자인 경진대회'
+      }
+    ],
     // Site URL for when it goes live
-    siteUrl: `https://monumental-chimera-b1ace3.netlify.app/`,
+    siteUrl: `https://minjoo-6.github.io`,
     // Your Name
-    name: 'Ryan Fitzgerald',
+    name: 'Kim MinJu',
     // Main Site Title
-    title: `Ryan Fitzgerald | Full-Stack Developer`,
+    title: `Kim MinJu | Full-Stack Developer`,
     // Description that goes under your name in main bio
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit, ipsum.`,
+    description: `Developer portfolio website`,
     // Optional: Twitter account handle
-    author: `@rfitzio`,
+//    author: `@rfitzio`,
     // Optional: Github account URL
-    github: `https://github.com/RyanFitzgerald`,
+    github: `https://github.com/minjoo-6`,
     // Optional: LinkedIn account URL
-    linkedin: `https://github.com/RyanFitzgerald/devfolio`,
+//    linkedin: `https://github.com/minjoo-6/devfolio`,
     // Content of the About Me section
-    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
+//    about: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis porro cumque ea error ab voluptatem. Temporibus adipisci exercitationem similique itaque quibusdam laudantium, qui molestiae quas, aut amet animi id.`,
     // Optional: List your projects, they must have `name` and `description`. `link` is optional.
     projects: [
       {
-        name: 'Devfolio',
+        name: 'BMS',
         description:
-          'A zero-config and blazing fast personal site + blog built with GatsbyJs and TailwindCSS',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
-      {
-        name: 'ExtensionKit',
-        description:
-          'Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates',
-        link: 'https://extensionkit.io/?ref=devfolio',
-      },
-      {
-        name: 'Another Cool Project',
-        description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit ducimus perferendis',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
+          'BMS 개발',
+        role: 'ss',
+        stack: 'ss',
+        year: `2022.09.01 - 2022.12.12`,
+        link: 'https://github.com/minjoo-6/firstsnow-project',
+      }
     ],
     // Optional: List your experience, they must have `name` and `description`. `link` is optional.
     experience: [
       {
-        name: 'Acme Corp',
-        description: 'Full-Stack Developer, February 2020 - Present',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
-      {
-        name: 'Globex Corp',
-        description: 'Full-Stack Developer, December 2017 - February 2020',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
-      {
-        name: 'Hooli',
-        description: 'Full-Stack Developer, May 2015 - December 2017',
-        link: 'https://github.com/RyanFitzgerald/devfolio',
-      },
+        name: 'first noon',
+        description: 'Full-Stack Developer, March 2024 - March 2025(1 year)',
+        link: 'https://github.com/minjoo-6/firstsnow-project',
+      }
     ],
     // Optional: List your skills, they must have `name` and `description`.
     skills: [
       {
-        name: 'Languages & Frameworks',
+        name: 'Frontend',
         description:
-          'JavaScript (ES6+), Golang, Node.js, Express.js, React, Ruby on Rails, PHP',
+          'JavaScript (ES6+), React, Next.js, Tailwind CSS',
       },
       {
-        name: 'Databases',
-        description: 'MongoDB, PostreSQL, MySQL',
+        name: 'Backend',
+        description: 'Java, Spring Framework, REST API, PostgreSQL, MySQL',
       },
       {
-        name: 'Other',
+        name: 'DevOps & Infra',
         description:
-          'Docker, Amazon Web Services (AWS), CI / CD, Microservices, API design, Agile / Scrum',
+          'Docker, AWS, GitHub, Github Actions',
+      },
+      {
+        name: 'Tools & Workflow',
+        description:
+          'Intellij, Postman, Notion, Slack',
       },
     ],
+    certifications: [
+      {
+        name: '정보처리기사', institution: '한국산업인력공단', year: 2022, description: ''
+      },
+      {
+        name: '컴퓨터활용능력 1급', institution: '대한상공회의소', year: 2022, description: ''
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

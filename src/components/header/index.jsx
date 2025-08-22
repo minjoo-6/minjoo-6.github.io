@@ -16,10 +16,7 @@ const classes = {
 };
 
 const Header = ({ metadata = {}, noBlog = false }) => {
-  const twitter = get(metadata, 'author', false);
   const github = get(metadata, 'github', false);
-  const linkedin = get(metadata, 'linkedin', false);
-
   return (
     <div className={classes.wrapper}>
       <div className={classes.imageWrapper}>
@@ -39,35 +36,11 @@ const Header = ({ metadata = {}, noBlog = false }) => {
         </h1>
         <p className={classes.description}>{metadata.description}</p>
         <ul className={classes.list}>
-          {twitter && (
-            <li className={classes.item}>
-              <a
-                className={classes.link}
-                href={`https://twitter.com/${twitter}`}
-              >
-                Twitter
-              </a>
-            </li>
-          )}
           {github && (
             <li className={classes.item}>
               <a className={classes.link} href={github}>
                 GitHub
               </a>
-            </li>
-          )}
-          {linkedin && (
-            <li className={classes.item}>
-              <a className={classes.link} href={linkedin}>
-                LinkedIn
-              </a>
-            </li>
-          )}
-          {!noBlog && (
-            <li className={classes.item}>
-              <Link className={classes.link} to="/blog">
-                Blog
-              </Link>
             </li>
           )}
         </ul>
